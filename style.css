@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Com o border-box, o tamanho que define é o que fica, já incluindo borda e preenchimento*/
+}
+
+/* Variavéis de cor */
+/* OBS: os nome abaixo foram escolhidos aleatoriamente, dependendo da tonalidade ou função */
+:root {     /* serve para definir as cores do projeto em um só lugar e reutilizá-las em todo o código, garantindo a padronização */
+  --navy:   #0f1e3d;  /*azul-marinho escuro */
+  --blue:   #1b4f8a;  /*azul mais claro */
+  --teal:   #1a9aa8;    /*verde-azulado */
+  --yellow: #f5c842;        /*amarelo */
+  --white:  #ffffff;    /*branco */
+  --border: #e8edf5;    /*cor para bordas e elementos de separação */
+  --muted:  #64748b;    /*cor suave para textos e elementos secundários */
+  --bg:     #f7f9fc;    /*cor para fundo da página / bg = background */
+}
+
+.menu-superior{
+    background: var(--navy);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo na esquerda, menu na direita */
+    padding: 0 40px;
+    position: sticky;  /* gruda no topo ao rolar */
+    top: 0;
+    z-index: 100;  /* fica na frente de outros itens */
+}
+
