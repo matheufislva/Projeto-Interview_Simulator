@@ -16,6 +16,7 @@
         
      </nav>
 
+     <button id="abrirModal">Começar simulação</button>
 
 
 
@@ -50,6 +51,31 @@
 
 
 
+
+<!-- MODAL TALITA -->
+<div id="modalOverlay" class="modal-overlay">
+  <div class="modal">
+    <button id="fecharModal" class="modal-fechar">&times;</button>
+
+    <h2>Comece sua simulação</h2>
+    <p>Informe a vaga e envie seu currículo para preparar a entrevista simulada.</p>
+
+    <form id="formModal">
+      <label for="vaga">Link da vaga</label>
+      <input type="url" id="vaga" placeholder="Cole aqui o link da vaga desejada" required>
+
+      <label for="curriculo">Currículo (PDF ou DOCX)</label>
+      <input type="file" id="curriculo" accept=".pdf,.docx" required>
+
+      <label class="checkbox-termos">
+        <input type="checkbox" id="termos" required>
+        <span>Ao iniciar a simulação, você concorda com os Termos de Uso e a Política de Privacidade.</span>
+      </label>
+
+      <button type="submit" class="btn-modal">Iniciar simulação</button>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>
