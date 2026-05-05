@@ -26,6 +26,137 @@
     padding: 0 40px;
     position: sticky;  /* gruda no topo ao rolar */
     top: 0;
-    z-index: 100;  /* fica na frente de outros itens */
+    z-index: 300;  /* fica na frente de outros itens */
 }
 
+/* BOTÃO HAMBURGUER */
+.hamburguer {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#hamburguer span {
+  width: 25px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+/* MENU LATERAL */
+.menu-lateral {
+  position: fixed;  /* precisa ser fixed para o botão funcionar */
+  top: 64px; /* logo da barra superior */
+  right: -250px; /* escondido fora da tela */
+  width: 250px;
+  height: 100vh;
+  background: var(--navy);
+  color: var(--white);
+  padding: 20px;
+  transition: right 0.3s ease;
+  overflow-y: auto;      /* ativa rolagem interna */
+  z-index: 200
+}
+
+.menu-lateral.ativo {
+  right: 0; /* aparece quando ativo */
+}
+
+.menu-lateral h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--yellow);
+}
+
+.menu-titulo{
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--yellow);
+  margin-bottom: 20px;
+}
+
+.secao-titulo{
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--teal);
+}
+
+.menu-secao{
+  list-style: none;
+  margin-bottom: 20px;
+  
+}
+
+.menu-secao li a {  /*  li e a: seleciona todos os links (<a>) que estão dentro de um <li> dentro de .menu-section.  */
+  display: block;
+  padding: 6px 0;
+  padding-left: 10px;
+  font-size: 15px;
+  color: var(--white);
+  text-decoration: none;    /* remove o sublinhado padrão dos links */
+  transition: color 0.3s;
+}
+
+.menu-secao li a:hover {  /*quando o usuário passa o mouse sobre o link, a cor muda para amarelo.*/
+  color: var(--yellow);
+}
+.menu-secao li a.destaque:hover {
+  color: var(--teal); /* cor diferente só para os destacados */
+}
+
+/* Espaçamento entre seções */
+.menu-secao {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+
+.simulador .secao-titulo a { color: #f5c842; }      /* amarelo */
+.institucional .secao-titulo a { color: #1a9aa8; }  /* teal */
+.cursos .secao-titulo a { color: #1b4f8a; }         /* azul */
+.areas .secao-titulo a { color: #9ca3af; }          /* cinza claro */
+
+
+/* SEÇÃO HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url("imagens/imagens_diversas/fundogradiente.svg");
+  background-size: cover;     /* garante que não repete */
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--white);
+  padding: 60px;
+}
+
+.hero-texto {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-texto h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--white); /* destaque no título */
+}
+
+.hero-texto p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-imagem img {
+  max-width: 100%;
+  border-radius: 8px;
+}
