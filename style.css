@@ -29,3 +29,140 @@
     z-index: 100;  /* fica na frente de outros itens */
 }
 
+/* MODAL TALITA */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-overlay.ativo {
+  display: flex;
+}
+
+.modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 460px;
+  padding: 32px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  font-family: Arial, sans-serif;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  line-height: 1;
+  color: #071a33;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin: 0 0 8px;
+  color: #071a33;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modal p {
+  margin: 0 0 24px;
+  color: #4b5870;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal label {
+  margin: 14px 0 6px;
+  color: #071a33;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.modal input[type="url"],
+.modal input[type="file"] {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d9e0ec;
+  border-radius: 8px;
+  background: #f8faff;
+  color: #071a33;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.modal input[type="url"]:focus,
+.modal input[type="file"]:focus {
+  outline: none;
+  border-color: #1b5fa7;
+  box-shadow: 0 0 0 3px rgba(27, 95, 167, 0.15);
+}
+
+.checkbox-termos {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 18px;
+  color: #3f4b5f;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.checkbox-termos input {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: #071a33;
+  flex-shrink: 0;
+}
+
+.btn-modal {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #071a33;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-modal:hover {
+  background: #0b2a52;
+  transform: translateY(-1px);
+}
+
+.btn-modal:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 520px) {
+  .modal {
+    max-width: 100%;
+    padding: 24px;
+  }
+
+  .modal h2 {
+    font-size: 22px;
+  }
+}
