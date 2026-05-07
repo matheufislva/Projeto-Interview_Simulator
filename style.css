@@ -144,11 +144,13 @@
   font-size: 32px;
   margin-bottom: 20px;
   color: var(--white); /* destaque no título */
+  text-align: center;
 }
 
 .hero-texto p {
   font-size: 18px;
   line-height: 1.6;
+  text-align: center;
 }
 
 .hero-imagem {
@@ -302,7 +304,7 @@
 .passo-divisor {
   width: 40px;
   height: 2px;
-  background: #c8d8f0;
+  background: #94afd4;
   margin-top: 44px; /* alinha com o centro do círculo */
   flex-shrink: 0;
 }
@@ -365,7 +367,7 @@
 /* SEÇÃO COMECE AGORA */
 .comece-agora {
   padding: 80px 20px;
-  background: #f7f9fc;
+  background: #F7F9FC;
 }
 
 .comece-container {
@@ -410,7 +412,7 @@
 
 .comece-card {
   background: #ffffff;
-  border: 1.5px solid #d0ddef;
+  border: 1.5px solid #758fb0;
   border-radius: 16px;
   padding: 36px 32px;
   text-align: center;
@@ -1173,11 +1175,13 @@ margin-top: 40px;
     flex-direction: column;
     align-items: center;
   }
+
   .passo-divisor {
     width: 2px;
     height: 30px;
     margin-top: 0;
   }
+
   .passo {
     width: 100%;
     max-width: 300px;
