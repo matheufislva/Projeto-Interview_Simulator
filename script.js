@@ -1,4 +1,7 @@
+//============================================================================================================
 //HOME-MATHEUS
+//============================================================================================================
+
 //BOTÃO HAMBURGUER
 const hamburguer = document.getElementById('hamburguer');
 const menuLateral = document.querySelector('.menu-lateral');
@@ -13,8 +16,10 @@ hamburguer.addEventListener('click', () => {
 
 
 
+//============================================================================================================
+// POP UP TALITA 
+// ============================================================================================================//
 
-// POP UP TALITA
 const abrirModal = document.getElementById("abrirModal");
 const fecharModal = document.getElementById("fecharModal");
 const modalOverlay = document.getElementById("modalOverlay");
