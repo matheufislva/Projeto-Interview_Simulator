@@ -1131,3 +1131,152 @@ margin-top: 40px;
 
     border-radius: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------
+  RESPONSIVIDADE
+-------------------------------------------------*/
+
+@media (max-width: 900px) {
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .hero-texto {
+    max-width: 100%;
+  }
+  .hero-imagem img {
+    max-width: 80%;
+    margin-top: 32px;
+  }
+
+  /* SOBRE - 3 cards viram 1 coluna */
+  .sobre-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* COMO USAR - passos empilham */
+  .passos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .passo-divisor {
+    width: 2px;
+    height: 30px;
+    margin-top: 0;
+  }
+  .passo {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* COMECE AGORA - 2 cards viram 1 coluna */
+  .comece-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* POR QUE FESP - 4 cards viram 2 colunas */
+  .por-que-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* RODAPÉ - 4 colunas viram 2 */
+  .rodape-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  /* MENU */
+  .menu-superior {
+    padding: 0 20px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 32px 16px;
+  }
+  .hero-texto h1 {
+    font-size: 1.6rem;
+  }
+  .hero-texto p {
+    font-size: 1rem;
+  }
+
+  /* SOBRE */
+  .sobre-titulo {
+    font-size: 1.6rem;
+  }
+
+  /* COMO USAR */
+  .como-usar-container {
+    padding: 32px 16px;
+    border: none; /* remove pontilhado no celular para não apertar */
+  }
+  .como-usar-titulo {
+    font-size: 1.5rem;
+  }
+
+  /* COMECE AGORA */
+  .comece-titulo {
+    font-size: 1.5rem;
+  }
+  .comece-btn {
+    width: 100%;
+  }
+
+  /* POR QUE FESP - 2 colunas viram 1 */
+  .por-que-cards {
+    grid-template-columns: 1fr;
+  }
+  .por-que-titulo {
+    font-size: 1.5rem;
+  }
+
+  /* DICAS (página dicas_de_preparacao) */
+  .Cards-Dicas {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* RODAPÉ */
+  .rodape-container {
+    grid-template-columns: 1fr;
+  }
+  .rodape-links-duplo {
+    flex-direction: column;
+    gap: 0;
+  }
+  .rodape-barra-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .rodape-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .rodape-barra-logo {
+    display: none; /* esconde logo pequena no celular */
+  }
+}
