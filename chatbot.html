@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fespinho</title>
-    <script> window.chtlConfig = { chatbotId: "4499317437" , display: "fullscreen" } </script>
-<script async data-id="4499317437" id="chtl-script" data-display="fullscreen" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
 </head>
 <body>
-    <h1>Aqui será a área do chatbot</h1>
-    <a href="index.html"><button>Voltar para a página principal</button></a>
+
+<script>
+  // Lê os dados salvos pelo modal
+  const vagaLink = sessionStorage.getItem('vagaLink') || '';
+  const curriculoNome = sessionStorage.getItem('curriculoNome') || '';
+
+  window.chtlConfig = {
+    chatbotId: "4499317437",
+    display: "fullscreen",
+    customVariables: {
+      url_vaga: vagaLink,        // ← passa o link da vaga
+      curriculo: curriculoNome   // ← passa o nome do arquivo
+    }
+  };
+</script>
+
+<script async data-id="4499317437" id="chtl-script" 
+  data-display="fullscreen" type="text/javascript" 
+  src="https://chatling.ai/js/embed.js">
+</script>
+
 </body>
 </html>

@@ -38,6 +38,24 @@ modalOverlay.addEventListener("click", (event) => {
   }
 });
 
+// SUBMIT DO MODAL - redireciona para o chatbot
+document.getElementById('formModal').addEventListener('submit', function (e) {
+  e.preventDefault(); // impede o envio padrão do formulário
+
+  const vaga = document.getElementById('vaga').value;
+  const curriculo = document.getElementById('curriculo').files[0];
+  const termos = document.getElementById('termos').checked;
+
+  // Validação básica
+  if (!vaga || !curriculo || !termos) return;
+
+  // Salva o link da vaga para usar no chatbot 
+  sessionStorage.setItem('vagaLink', vaga);
+  sessionStorage.setItem('curriculoNome', curriculo.name);
+
+  // Redireciona para a página do chatbot
+  window.location.href = 'chatbot.html'; // ← troque pelo nome real da sua página
+});
 
 
 
