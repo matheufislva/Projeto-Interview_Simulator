@@ -364,7 +364,9 @@
   padding-bottom: 1px;
 }
 
-/* SEÇÃO COMECE AGORA */
+/* ==========================================
+   SEÇÃO COMECE AGORA
+   ========================================== */
 .comece-agora {
   padding: 80px 20px;
   background: #F7F9FC;
@@ -383,10 +385,9 @@
   padding: 8px 20px;
   border-radius: 50px;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 2px;
   margin-bottom: 24px;
-  font-weight: 900;   /* negrito */
 }
 
 .comece-titulo {
@@ -402,7 +403,7 @@
   margin-bottom: 48px;
 }
 
-/* DOIS CARDS LADO A LADO */
+/* Grid dos cards */
 .comece-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -410,62 +411,33 @@
   margin-bottom: 48px;
 }
 
+/* Card individual */
 .comece-card {
   background: #ffffff;
   border: 1.5px solid #758fb0;
   border-radius: 16px;
-  padding: 36px 32px;
+  padding: 40px 32px 32px;
   text-align: center;
   position: relative;
-}
-
-#card-1 {
-  border: 1.5px solid #0F1E3D;
-}
-
-/* NÚMERO DO CANTO */
-.comece-numero {
-  right: 32px;
-  left: -16px; 
-  width: 32px;
-  height: 32px;
-  background: var(--blue);
-  color: var(--white);
-  border-radius: 50%;
-  font-size: 0.9rem;
-  font-weight: 900;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  min-height: 250px;
 }
-
-.comece-card-titulo {
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-
-.comece-card-texto {
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* INPUT DE TEXTO */
-.comece-input {
+/* INPUT FAKE - apenas visual */
+.comece-input-fake {
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 16px 12px 36px;
   border: 1.5px solid #d0ddef;
   border-radius: 8px;
   font-size: 0.9rem;
-  color: var(--navy);
+  color: #94a3b8;
   background: #f8faff;
-  outline: none;
-  margin-bottom: 12px;
+  text-align: left;
+  margin-bottom: 50px;
   box-sizing: border-box;
 }
+
 .comece-input-wrapper {
   position: relative;
   width: 100%;
@@ -474,29 +446,20 @@
 .comece-input-icone {
   position: absolute;
   left: 12px;
-  top: 35%;
+  top: 20%;
   transform: translateY(-50%);
   font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.comece-portais{
+  font-size: 0.78rem;
   color: var(--muted);
-  pointer-events: none; /* não interfere no clique do input */
+  margin-bottom: 12px;
 }
 
-.comece-input {
-  padding-left: 36px; /* espaço para o ícone não sobrepor o texto */
-}
-
-.comece-input:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(27, 79, 138, 0.12);
-}
-
-.comece-portais {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-/* ÁREA DE UPLOAD */
-.comece-upload {
+/* UPLOAD FAKE - apenas visual */
+.comece-upload-fake {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -504,15 +467,10 @@
   border: 2px dashed #b8ccec;
   border-radius: 12px;
   padding: 28px 20px;
-  cursor: pointer;
-  transition: border-color 0.3s, background 0.3s;
   background: #f8faff;
   gap: 8px;
-}
-
-.comece-upload:hover {
-  border-color: var(--blue);
-  background: #eef3fb;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .comece-upload-icone {
@@ -531,8 +489,44 @@
   font-size: 0.78rem;
   color: var(--muted);
 }
+#card-1 {
+  border-color: #0F1E3D;
+}
 
-/* BOTÃO INICIAR */
+/* Número azul no topo-esquerdo */
+.comece-numero {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 32px;
+  height: 32px;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.comece-card-titulo {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.comece-card-texto {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+/* Botão */
 .comece-btn {
   background: var(--navy);
   color: var(--white);
@@ -543,6 +537,12 @@
   font-weight: 700;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+}
+
+.comece-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .comece-btn:hover {
