@@ -38,31 +38,42 @@ modalOverlay.addEventListener("click", (event) => {
   }
 });
 
-// SUBMIT DO MODAL - redireciona para o chatbot
-document.getElementById('formModal').addEventListener('submit', function (e) {
-  e.preventDefault(); // impede o envio padrão do formulário
+// Configuração da biblioteca
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+document.getElementById('formModal').addEventListener('submit', async function (e) {
+  e.preventDefault();
 
   const vaga = document.getElementById('vaga').value;
-  const curriculo = document.getElementById('curriculo').files[0];
+  const arquivo = document.getElementById('curriculo').files[0];
   const termos = document.getElementById('termos').checked;
 
-  // Validação básica
-  if (!vaga || !curriculo || !termos) return;
+  if (!vaga || !arquivo || !termos) return;
 
-  // Salva o link da vaga para usar no chatbot 
-  sessionStorage.setItem('vagaLink', vaga);
-  sessionStorage.setItem('curriculoNome', curriculo.name);
+  // 1. Inicia a leitura do PDF
+  const reader = new FileReader();
+  reader.onload = async function() {
+    const typedarray = new Uint8Array(this.result);
+    const pdf = await pdfjsLib.getDocument(typedarray).promise;
+    let textoExtraido = "";
 
-  // Redireciona para a página do chatbot
-  window.location.href = 'chatbot.html'; // ← troque pelo nome real da sua página
+    // 2. Loop para extrair texto de todas as páginas
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      textoExtraido += content.items.map(item => item.str).join(" ") + " ";
+    }
+
+    // 3. Salva os dados processados no sessionStorage
+    sessionStorage.setItem('vagaLink', vaga);
+    sessionStorage.setItem('curriculo_texto', textoExtraido); // Agora enviamos o TEXTO, não o nome 
+
+    // 4. Redireciona para o chatbot
+    window.location.href = 'chatbot.html';
+  };
+
+  reader.readAsArrayBuffer(arquivo);
 });
-
-
-
-
-
-
-
 
 
 

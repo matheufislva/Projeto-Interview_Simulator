@@ -3,29 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fespinho</title>
+    <title>Fespinho - Simulação</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<script type="module">
+  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js';
 
-<script>
-  // Lê os dados salvos pelo modal
-  const vagaLink = sessionStorage.getItem('vagaLink') || '';
-  const curriculoNome = sessionStorage.getItem('curriculoNome') || '';
-
-  window.chtlConfig = {
-    chatbotId: "4499317437",
-    display: "fullscreen",
-    customVariables: {
-      url_vaga: vagaLink,        // ← passa o link da vaga
-      curriculo: curriculoNome   // ← passa o nome do arquivo
-    }
-  };
+  Typebot.initStandard({ typebot: "my-typebot-lddtcx4" });
 </script>
 
-<script async data-id="4499317437" id="chtl-script" 
-  data-display="fullscreen" type="text/javascript" 
-  src="https://chatling.ai/js/embed.js">
-</script>
+<typebot-standard style="width: 100%; height: 1000px; "></typebot-standard>
 
 </body>
 </html>
+
