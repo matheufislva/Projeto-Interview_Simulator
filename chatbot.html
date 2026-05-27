@@ -800,20 +800,33 @@
   // CHAMADA API ANTHROPIC
   // ============================================================
   async function chamarAPI(mensagens, systemPrompt) {
-    // Chama a Netlify Function (proxy seguro que guarda a API key no servidor)
-    const resp = await fetch('/.netlify/functions/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const resp = await fetch("/.netlify/functions/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: "claude-sonnet-4-20250514",
         max_tokens: 1000,
         system: systemPrompt,
         messages: mensagens,
       })
     });
-    if (!resp.ok) throw new Error('Erro ' + resp.status);
+
     const data = await resp.json();
-    return data.content[0].text;
+    console.log("[API response]", JSON.stringify(data));
+
+    if (!resp.ok) {
+      const detalhe = data?.error?.message || data?.message || resp.status;
+      throw new Error("Erro da API: " + detalhe);
+    }
+
+    if (!data.content || !Array.isArray(data.content) || data.content.length === 0) {
+      throw new Error("Resposta inesperada: " + JSON.stringify(data));
+    }
+
+    const bloco = data.content.find(function(b){ return b.type === "text"; });
+    if (!bloco) throw new Error("Nenhum bloco de texto na resposta.");
+
+    return bloco.text;
   }
 
   // ============================================================
@@ -1174,13 +1187,25 @@ Retorne SOMENTE JSON válido, sem texto antes ou depois:
   // ============================================================
   // INICIALIZAR
   // ============================================================
-  window.addEventListener('DOMContentLoaded', () => {
-    state.vagaLink       = sessionStorage.getItem('vagaLink') || 'Vaga não especificada';
-    state.curriculoTexto = sessionStorage.getItem('curriculo_texto') || '';
+  window.addEventListener("DOMContentLoaded", () => {
+    state.vagaLink       = sessionStorage.getItem("vagaLink") || "";
+    state.curriculoTexto = sessionStorage.getItem("curriculo_texto") || "";
+
+    // Se abrir chatbot.html direto sem passar pelo modal, redireciona
+    if (!state.vagaLink) {
+      $loading.innerHTML = `
+        <div style="text-align:center;padding:40px 20px">
+          <p style="font-size:2rem;margin-bottom:16px">⚠️</p>
+          <h2 style="color:var(--navy);margin-bottom:12px">Dados não encontrados</h2>
+          <p style="color:var(--muted);margin-bottom:24px;line-height:1.6">Para iniciar a simulação, você precisa preencher o link da vaga e enviar seu currículo na página inicial.</p>
+          <a href="index.html" style="display:inline-block;background:var(--navy);color:#fff;padding:14px 32px;border-radius:10px;text-decoration:none;font-weight:700">← Voltar à página inicial</a>
+        </div>`;
+      return;
+    }
 
     setTimeout(() => {
-      $loading.style.display = 'none';
-      $chatArea.style.display = 'flex';
+      $loading.style.display = "none";
+      $chatArea.style.display = "flex";
       iniciarEntrevista();
     }, 1800);
   });
