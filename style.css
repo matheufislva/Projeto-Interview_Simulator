@@ -15,6 +15,7 @@
   --border: #e8edf5;    /*cor para bordas e elementos de separação */
   --muted:  #64748b;    /*cor suave para textos e elementos secundários */
   --bg:     #f7f9fc;    /*cor para fundo da página / bg = background */
+  font-size: 22px;
 }
 
 .menu-superior{
