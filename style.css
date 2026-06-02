@@ -15,7 +15,6 @@
   --border: #e8edf5;    /*cor para bordas e elementos de separação */
   --muted:  #64748b;    /*cor suave para textos e elementos secundários */
   --bg:     #f7f9fc;    /*cor para fundo da página / bg = background */
-  font-size: 22px;
 }
 
 .menu-superior{
@@ -1184,6 +1183,36 @@
   transform: translateY(0);
 }
 
+/* ===== BOTÃO VOLTAR MODAL ===== */
+.btn-modal-voltar {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 18px;
+  border: 2px solid #e8edf5;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+  font-family: inherit;
+}
+
+.btn-modal-voltar:hover {
+  border-color: #64748b;
+  color: #0f1e3d;
+  background: #f7f9fc;
+  transform: translateY(-1px);
+}
+
+.btn-modal-voltar:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 520px) {
   .modal {
     max-width: 100%;
@@ -1332,6 +1361,24 @@ margin-top: 40px;
 }
 
 .modal-dicas-link:hover { text-decoration: underline; }
+
+/* ===== BOTÃO VOLTAR NAS DICAS ===== */
+.modal-dicas-voltar {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(199, 212, 240, 0.5);
+  transition: all 0.2s ease;
+}
+
+.modal-dicas-voltar:hover {
+  color: var(--navy);
+  text-decoration: underline;
+}
 
 
 
