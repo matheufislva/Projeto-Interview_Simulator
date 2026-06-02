@@ -15,7 +15,6 @@
   --border: #e8edf5;    /*cor para bordas e elementos de separação */
   --muted:  #64748b;    /*cor suave para textos e elementos secundários */
   --bg:     #f7f9fc;    /*cor para fundo da página / bg = background */
-  font-size: 23px;
 }
 
 .menu-superior{
@@ -150,8 +149,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 48px;
-  padding: 64px 5%;       
-  max-width: 1400px;         
+  padding: 64px 5%;           /* ← Alterado */
+  max-width: 1400px;          /* ← Aumentado */
   margin: 0 auto;
   min-height: 480px;
 }
