@@ -1,138 +1,617 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador FESP-PR</title>
-    <link rel="stylesheet" href="style.css">   
-    <!-- fonte dos icones -->
-    <script src="https://kit.fontawesome.com/d8a92ffd63.js" crossorigin="anonymous"></script> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicas de Preparação para Entrevistas | FESP-PR</title>
+  <meta name="description" content="Dicas de comportamento, comunicação e vestimenta para se sair bem em entrevistas de emprego. Conteúdo do Simulador FESP-PR.">
+  <link rel="icon" href="imagens/logos/logoFespDark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d8a92ffd63.js" crossorigin="anonymous"></script>
+
+  <style>
+    .dicas-page { font-family: 'DM Sans', sans-serif; }
+
+    /* HERO */
+    .dicas-hero {
+      background: var(--navy);
+      background-image: url("imagens/imagens_diversas/fundogradiente.svg");
+      background-size: cover;
+      background-position: center;
+      padding: 72px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dicas-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 100%; height: 60px;
+      background: #f8fafc;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .dicas-hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dicas-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,200,66,0.15);
+      border: 1px solid rgba(245,200,66,0.4);
+      color: var(--yellow);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .dicas-hero-titulo {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .dicas-hero-titulo em { font-style: normal; color: var(--yellow); }
+
+    .dicas-hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    .dicas-hero-chips {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .dicas-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.75);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* SEÇÃO DICAS */
+    .dicas-secao {
+      background: #f8fafc;
+      padding: 80px 24px;
+    }
+
+    .dicas-secao-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .dicas-secao-titulo {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 48px;
+    }
+
+    .dicas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .dica-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(15,30,61,0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .dica-card:nth-child(1) { animation-delay: 0.1s; }
+    .dica-card:nth-child(2) { animation-delay: 0.2s; }
+    .dica-card:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .dica-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(15,30,61,0.13);
+    }
+
+    .dica-card-header {
+      padding: 28px 28px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid #f0f4f9;
+    }
+
+    .dica-card-header-icone {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .dica-card:nth-child(1) .dica-card-header-icone { background: linear-gradient(135deg, var(--navy), var(--blue)); }
+    .dica-card:nth-child(2) .dica-card-header-icone { background: linear-gradient(135deg, var(--blue), var(--teal)); }
+    .dica-card:nth-child(3) .dica-card-header-icone { background: linear-gradient(135deg, var(--teal), #0e7490); }
+
+    .dica-card-header-texto h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .dica-card-header-texto span {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .dica-card-body {
+      padding: 20px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .dica-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .dica-item-num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: #f0f4f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--blue);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .dica-item-texto strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .dica-item-texto p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* STAR e CAR */
+    .dicas-bonus {
+      background: var(--navy);
+      padding: 72px 24px;
+    }
+
+    .dicas-bonus-inner { max-width: 900px; margin: 0 auto; }
+
+    .dicas-bonus-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .dicas-bonus-tag {
+      display: inline-block;
+      background: rgba(245,200,66,0.15);
+      border: 1px solid rgba(245,200,66,0.3);
+      color: var(--yellow);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .dicas-bonus-titulo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .dicas-bonus-subtitulo {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .dicas-metodos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .dica-metodo {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .dica-metodo-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 6px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .dica-metodo h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .dica-metodo-lista {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dica-metodo-lista li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+
+    .dica-metodo-lista li::before {
+      content: '→';
+      color: var(--yellow);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    /* CTA FINAL */
+    .dicas-cta {
+      background: #f8fafc;
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .dicas-cta h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .dicas-cta p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .dicas-cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .dicas-cta-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .dicas-cta-btn-primary:hover { background: var(--blue); transform: translateY(-2px); }
+
+    .dicas-cta-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .dicas-cta-btn-secondary:hover { border-color: var(--navy); transform: translateY(-2px); }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .dicas-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
+      .dicas-metodos { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .dicas-hero { padding: 48px 20px 64px; }
+      .dicas-hero-titulo { font-size: 1.6rem; }
+      .dicas-secao { padding: 56px 16px; }
+      .dicas-bonus { padding: 56px 16px; }
+      .dicas-bonus-titulo { font-size: 1.4rem; }
+      .dica-card-header { padding: 20px 20px 16px; }
+      .dica-card-body { padding: 16px 20px 20px; }
+      .dicas-cta-btns { flex-direction: column; align-items: center; }
+      .dicas-cta-btn-primary,
+      .dicas-cta-btn-secondary { width: 100%; max-width: 320px; justify-content: center; }
+    }
+  </style>
 </head>
 
+<body class="dicas-page">
 
-<body>
-    <header>
+  <header class="menu-superior">
+    <a href="index.html" class="navlogo">
+      <img src="imagens/logos/logoFespDark.svg" alt="logo FESP">
+    </a>
+    <button class="hamburguer" id="hamburguer">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-       <nav class="menu-superior">                
-        <a href="#" class="navlogo">    
-            <img src="imagens/logos/logoFespDark.svg" alt="logo FESP">
-        </a>
-        
-        </nav>
-    </header>
-       <h1 class="Titulo">Dicas de preparacao para uma entrevista</h1>
-       <br>
+  <aside class="menu-lateral">
+    <nav>
+      <h2 class="menu-titulo">MENU</h2>
+      <ul class="menu-secao">
+        <li class="secao-titulo"><a href="index.html">INÍCIO</a></li>
+        <li><a href="index.html#comece-agora" class="destaque">Faça sua simulação</a></li>
+        <li><a href="dicas_de_preparacao.html">Dicas de preparação</a></li>
+        <li><a href="https://fesppr.edu.br/empregabilidade/">Portal de Empregabilidade</a></li>
+      </ul>
+      <ul class="menu-secao">
+        <li class="secao-titulo"><a href="#">INSTITUCIONAL</a></li>
+        <li><a href="https://fesppr.edu.br/a-fesp/">A FESP</a></li>
+        <li><a href="https://fesppr.edu.br/servicos/">Serviços</a></li>
+        <li><a href="https://fesppr.edu.br/blog/">Blog</a></li>
+        <li><a href="https://fesppr.edu.br/contato/">Contato</a></li>
+      </ul>
+      <ul class="menu-secao">
+        <li class="secao-titulo"><a href="#">CURSOS</a></li>
+        <li><a href="https://fesppr.edu.br/graduacao/">Graduação</a></li>
+        <li><a href="https://fesppr.edu.br/pos-graduacao/">Pós-graduação</a></li>
+        <li><a href="https://fesppr.edu.br/nano-way/">Nano Way</a></li>
+        <li><a href="https://fesppr.edu.br/fesp-escola-de-negocios/">Escola de Negócios</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-       <main>
-        
-       </main>
+  <main>
 
-       <section class="Boas-vindas">
-           <h2> Seja bem vindo </h2>
-           <p> Aqui voce encontrara dicas para melhorar sua performace e como se comportar em uma entrevista</p>
+    <section class="dicas-hero">
+      <div class="dicas-hero-inner">
+        <div class="dicas-hero-tag">
+          <i class="fa-solid fa-lightbulb"></i>
+          Guia de preparação
+        </div>
+        <h1 class="dicas-hero-titulo">Tudo que você precisa para <em>arrasar na entrevista</em></h1>
+        <p class="dicas-hero-desc">Comportamento, comunicação e vestimenta — dicas práticas de quem já passou por processos seletivos reais.</p>
+        <div class="dicas-hero-chips">
+          <span class="dicas-chip">🎯 Comportamento</span>
+          <span class="dicas-chip">💬 Comunicação</span>
+          <span class="dicas-chip">👔 Vestimenta</span>
+          <span class="dicas-chip">⭐ STAR &amp; CAR</span>
+        </div>
+      </div>
+    </section>
 
-       </section>
-       <br><br>
+    <section class="dicas-secao">
+      <div class="dicas-secao-inner">
+        <p class="dicas-secao-titulo">3 pilares para uma entrevista de sucesso</p>
+        <div class="dicas-grid">
 
-         <!-- cards de dicas -->
-       <section class="Dicas">
-        <h2>Dicas para a entrevista</h2>
-        <br>
+          <div class="dica-card">
+            <div class="dica-card-header">
+              <div class="dica-card-header-icone"><i class="fa-solid fa-user-gear"></i></div>
+              <div class="dica-card-header-texto">
+                <h3>Comportamento</h3>
+                <span>Postura e preparação prévia</span>
+              </div>
+            </div>
+            <div class="dica-card-body">
+              <div class="dica-item">
+                <div class="dica-item-num">1</div>
+                <div class="dica-item-texto">
+                  <strong>Pontualidade</strong>
+                  <p>Chegue com 10 a 15 minutos de antecedência. Se for online, teste o link, câmera e microfone 20 minutos antes.</p>
+                </div>
+              </div>
+              <div class="dica-item">
+                <div class="dica-item-num">2</div>
+                <div class="dica-item-texto">
+                  <strong>Linguagem Corporal</strong>
+                  <p>Postura ereta e relaxada. Evite cruzar os braços. Online, olhe para a câmera, não para sua própria imagem.</p>
+                </div>
+              </div>
+              <div class="dica-item">
+                <div class="dica-item-num">3</div>
+                <div class="dica-item-texto">
+                  <strong>Pesquisa Prévia</strong>
+                  <p>Conheça o core business da empresa e seus desafios recentes. Demonstrar isso impressiona qualquer recrutador.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-       <div class="Cards-Dicas">
+          <div class="dica-card">
+            <div class="dica-card-header">
+              <div class="dica-card-header-icone"><i class="fa-solid fa-comments"></i></div>
+              <div class="dica-card-header-texto">
+                <h3>Comunicação</h3>
+                <span>Como se expressar com clareza</span>
+              </div>
+            </div>
+            <div class="dica-card-body">
+              <div class="dica-item">
+                <div class="dica-item-num">1</div>
+                <div class="dica-item-texto">
+                  <strong>Escuta Ativa</strong>
+                  <p>Espere o recrutador terminar antes de responder. Se não entender algo, peça gentilmente para repetir.</p>
+                </div>
+              </div>
+              <div class="dica-item">
+                <div class="dica-item-num">2</div>
+                <div class="dica-item-texto">
+                  <strong>Vocabulário Adequado</strong>
+                  <p>Evite gírias ou termos técnicos se o recrutador for do RH. Adapte sua fala ao interlocutor.</p>
+                </div>
+              </div>
+              <div class="dica-item">
+                <div class="dica-item-num">3</div>
+                <div class="dica-item-texto">
+                  <strong>Perguntas Inteligentes</strong>
+                  <p>Tenha 2 ou 3 perguntas prontas. Ex: "Como é o dia a dia da equipe?" ou "Quais são as metas para os primeiros 6 meses?"</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-       <article class="Card">
+          <div class="dica-card">
+            <div class="dica-card-header">
+              <div class="dica-card-header-icone"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="dica-card-header-texto">
+                <h3>Vestimenta</h3>
+                <span>Dress code e apresentação</span>
+              </div>
+            </div>
+            <div class="dica-card-body">
+              <div class="dica-item">
+                <div class="dica-item-num">1</div>
+                <div class="dica-item-texto">
+                  <strong>Conheça o Dress Code</strong>
+                  <p>Pesquise fotos da empresa no LinkedIn. Startup: casual (jeans escuro + camisa). Banco ou advocacia: formal.</p>
+                </div>
+              </div>
+              <div class="dica-item">
+                <div class="dica-item-num">2</div>
+                <div class="dica-item-texto">
+                  <strong>Conforto e Discrição</strong>
+                  <p>O foco deve ser seu rosto e sua fala. Evite acessórios ou estampas que distraiam o recrutador.</p>
+                </div>
+              </div>
+              <div class="dica-item">
+                <div class="dica-item-num">3</div>
+                <div class="dica-item-texto">
+                  <strong>Entrevistas Online</strong>
+                  <p>Vista-se por completo mesmo em casa. Isso melhora sua postura mental e evita gafes caso precise se levantar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <!-- icones -->
-         <div class="Card-icone">
-             <i class="fa-solid fa-user-gear"></i>
-         </div>
+        </div>
+      </div>
+    </section>
 
-        <h3>Comportamento: </h3> <br>
-
-        <h4>
-            <ul class="Listac1">
-
-                <li> Pontualidade </li>
-                <p>Chegue com 10 a 15 minutos de antecedência. Se for online, teste o link, a câmera e o microfone 20 minutos antes.</p><br>
-
-                <li> Linguagem Corporal: </li>
-                <p>Mantenha uma postura ereta, mas relaxada. Evite cruzar os braços, o que pode passar uma imagem de defesa ou desinteresse. Se for online, olhe para a câmera, não para a sua própria imagem.</p>
-               <br>
-                <li> Pesquisa Prévia: </li>
-                <p>Demonstre que você conhece a empresa. Saiba qual é o "core business" dela e, se possível, os desafios recentes que ela enfrentou.</p> <br>
- 
+    <section class="dicas-bonus">
+      <div class="dicas-bonus-inner">
+        <div class="dicas-bonus-header">
+          <div class="dicas-bonus-tag">BÔNUS</div>
+          <h2 class="dicas-bonus-titulo">Conheça as metodologias STAR e CAR</h2>
+          <p class="dicas-bonus-subtitulo">Os modelos mais usados por recrutadores para avaliar respostas — e o Fespinho usa exatamente eles.</p>
+        </div>
+        <div class="dicas-metodos">
+          <div class="dica-metodo">
+            <span class="dica-metodo-badge">STAR</span>
+            <h4>Situação · Tarefa · Ação · Resultado</h4>
+            <ul class="dica-metodo-lista">
+              <li><strong>S</strong>ituação — descreva o contexto em que o fato ocorreu</li>
+              <li><strong>T</strong>arefa — qual era o seu papel ou desafio naquele momento</li>
+              <li><strong>A</strong>ção — o que você fez especificamente para resolver</li>
+              <li><strong>R</strong>esultado — qual foi o resultado concreto das suas ações</li>
             </ul>
-            
-
-        </h4>
-
-
-       </article>
-
-       <article class="Card">
-
-        <div class="Card-icone">
-             <i class="fa-solid fa-comments"></i>
-         </div>
-
-        <h3>Comunicação </h3> <br>
-
-        <h4>
-            <ul class="Listac2">
-
-                <li> Escuta Ativa: </li>
-                <p>Espere o recrutador terminar a pergunta antes de responder. Se não entender algo, peça gentilmente para ele repetir ou esclarecer.</p><br>
-
-                <li> Vocabulário: </li>
-                <p>Evite gírias excessivas ou termos muito técnicos se o recrutador for do RH e não da área específica. Adapte sua fala.</p><br>
-
-                <li> Perguntas Inteligentes: </li>
-                <p>Sempre tenha 2 ou 3 perguntas para fazer ao final. Exemplo: "Como é o dia a dia da equipe?" ou "Quais são as principais metas para essa posição nos primeiros seis meses?".</p> <br>
- 
+          </div>
+          <div class="dica-metodo">
+            <span class="dica-metodo-badge">CAR</span>
+            <h4>Contexto · Ação · Resultado</h4>
+            <ul class="dica-metodo-lista">
+              <li><strong>C</strong>ontexto — qual era a situação e o problema envolvido</li>
+              <li><strong>A</strong>ção — as medidas concretas que você tomou</li>
+              <li><strong>R</strong>esultado — o impacto gerado, preferencialmente com números</li>
             </ul>
-            
+          </div>
+        </div>
+      </div>
+    </section>
 
-        </h4>
+    <section class="dicas-cta">
+      <h2>Pronto para simular sua entrevista?</h2>
+      <p>Agora que você já sabe o que fazer, coloque em prática com o Fespinho.<br>Receba feedback real e evolua a cada simulação.</p>
+      <div class="dicas-cta-btns">
+        <a href="index.html#comece-agora" class="dicas-cta-btn-primary">Iniciar simulação →</a>
+        <a href="index.html" class="dicas-cta-btn-secondary">← Voltar à página inicial</a>
+      </div>
+    </section>
 
+  </main>
 
-       </article>
+  <script>
+    const hamburguer = document.getElementById('hamburguer');
+    const menuLateral = document.querySelector('.menu-lateral');
+    hamburguer.addEventListener('click', () => menuLateral.classList.toggle('ativo'));
+  </script>
 
-       <article class="Card">
-
-        <div class="Card-icone">
-             <i class="fa-solid fa-user-tie"></i>
-         </div>
-
-        <h3>Vestimenta </h3> <br>
-
-        <h4>
-            <ul class="Listac3">
-
-                <li> Conheça o "Dress Code": </li>
-                <p>Pesquise fotos da empresa nas redes sociais (como o LinkedIn). Se for uma startup de tecnologia, um visual casual (jeans escuro e camisa/blusa básica) funciona bem. Se for um banco ou escritório de advocacia, o traje formal é indispensável.</p><br>
-
-                <li> Conforto e Discrição: </li>
-                <p>Use roupas que não te deixem desconfortável (muito apertadas ou que esquentem demais). O foco da entrevista deve ser o seu rosto e sua fala, não um acessório ou estampa chamativa.</p><br>
-
-                <li> Entrevistas Online: </li>
-                <p>Mesmo em casa, vista-se por completo (da cabeça aos pés). Isso ajuda na sua mentalidade profissional e evita gafes caso você precise se levantar por algum motivo.</p> <br>
- 
-            </ul>       
-
-        </h4>
-
-        
-       </article>
-       </div>
-
-       </section>
-       <a href="index.html"><button>Voltar para pagina iinicial</button></a>
-
-
-        
-        
-
-     </body>
-
+</body>
 </html>
