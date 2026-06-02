@@ -32,7 +32,7 @@
           <nav>
             <h2 class="menu-titulo">MENU</h2>
             <ul class="menu-secao">
-                <li class="secao-titulo"><a href="#">INÍCIO</a></li>
+                <li class="secao-titulo"><a href="#">SIMULADOR</a></li>
                 <li><a href="#comece-agora" class="destaque">Faça sua simulação</a></li>
                 <li><a href="https://fesppr.edu.br/empregabilidade/">Portal de Empregabilidade</a></li>
             </ul>
@@ -63,107 +63,20 @@
      </aside>
 
 <main>
+     <!-- SEÇÃO HERO -->
+<section class="hero">
+  <div class="hero-texto">
+    <h1>Prepare-se para sua entrevista de emprego</h1>
+    <p>
+      Treine para processos seletivos reais com inteligência artificial.<br>
+      Receba dicas em tempo real, corrija pontos cegos e destaque-se da concorrência com uma fala impecável.
+    </p>
+    
+  </div>
 
-
-<!-- SEÇÃO HERO — CARROSSEL -->
-<section class="hero-carousel" id="heroCarousel" aria-label="Apresentação do simulador">
- 
-  <div class="hc-track" id="hcTrack">
- 
-    <!-- SLIDE 1 -->
-    <div class="hc-slide" aria-hidden="false">
-      <div class="hc-slide-inner">
-        <div class="hc-content">
-          <span class="hc-eyebrow">Simulador de Entrevistas com IA</span>
-          <h1 class="hc-title">Prepare-se para sua <em>entrevista de emprego</em></h1>
-          <p class="hc-desc">Treine para processos seletivos reais com inteligência artificial. Destaque-se da concorrência com uma fala impecável.</p>
-          <a href="#comece-agora" class="hc-btn">Iniciar simulação <span class="hc-btn-arrow">→</span></a>
-        </div>
-        <div class="hc-visual">
-          <div class="hc-img-wrap">
-            <img src="imagens/imagens_diversas/entrevista.svg" alt="Entrevista de emprego">
-          </div>
-          <div class="hc-stat-card hc-stat-1">
-            <span class="hc-stat-num">+500</span>
-            <span class="hc-stat-lbl">Simulações realizadas</span>
-          </div>
-          <div class="hc-stat-card hc-stat-2">
-            <span class="hc-stat-num">98%</span>
-            <span class="hc-stat-lbl">Satisfação dos alunos</span>
-          </div>
-        </div>
-      </div>
-    </div>
- 
-    <!-- SLIDE 2 -->
-    <div class="hc-slide" aria-hidden="true">
-      <div class="hc-slide-inner">
-        <div class="hc-content">
-          <span class="hc-eyebrow">Tecnologia personalizada</span>
-          <h1 class="hc-title">Perguntas <em>geradas para você</em>, baseadas na vaga real</h1>
-          <p class="hc-desc">A IA lê seu currículo e o link da vaga para criar perguntas que recrutadores realmente fazem — incluindo o que não está no seu CV.</p>
-          <a href="#comece-agora" class="hc-btn">Testar agora <span class="hc-btn-arrow">→</span></a>
-        </div>
-        <div class="hc-visual">
-          <div class="hc-img-wrap">
-            <img src="imagens/imagens_diversas/entrevista2.svg" alt="Perguntas personalizadas">
-          </div>
-          <div class="hc-stat-card hc-stat-1">
-            <span class="hc-stat-num">STAR</span>
-            <span class="hc-stat-lbl">Metodologia aplicada</span>
-          </div>
-          <div class="hc-stat-card hc-stat-2">
-            <span class="hc-stat-num">CAR</span>
-            <span class="hc-stat-lbl">Avaliação por resposta</span>
-          </div>
-        </div>
-      </div>
-    </div>z'
- 
-    <!-- SLIDE 3 -->
-    <div class="hc-slide" aria-hidden="true">
-      <div class="hc-slide-inner">
-        <div class="hc-content">
-          <span class="hc-eyebrow">Relatório detalhado</span>
-          <h1 class="hc-title">Evolua com <em>feedback real</em> a cada simulação</h1>
-          <p class="hc-desc">Gráfico radar de desempenho, pontuação por categoria, pontos fortes e sugestões de cursos para você ir além.</p>
-          <a href="#comece-agora" class="hc-btn">Ver como funciona <span class="hc-btn-arrow">→</span></a>
-        </div>
-        <div class="hc-visual">
-          <div class="hc-img-wrap">
-            <img src="imagens/imagens_diversas/entrevista3.svg" alt="Relatório de desempenho">
-          </div>
-          <div class="hc-stat-card hc-stat-1">
-            <span class="hc-stat-num">360°</span>
-            <span class="hc-stat-lbl">Avaliação completa</span>
-          </div>
-          <div class="hc-stat-card hc-stat-2">
-            <span class="hc-stat-num">100%</span>
-            <span class="hc-stat-lbl">Gratuito para alunos</span>
-          </div>
-        </div>
-      </div>
-    </div>
- 
+  <div class="hero-imagem">
+    <img src="imagens/imagens_diversas/entrevista.svg" alt="Entrevista de emprego">
   </div>
- 
-  <!-- DOTS + CONTADOR -->
-  <div class="hc-controls">
-    <div class="hc-dots" role="tablist" aria-label="Selecionar slide">
-      <button class="hc-dot active" role="tab" aria-selected="true"  aria-label="Slide 1" onclick="hcGo(0)"></button>
-      <button class="hc-dot"        role="tab" aria-selected="false" aria-label="Slide 2" onclick="hcGo(1)"></button>
-      <button class="hc-dot"        role="tab" aria-selected="false" aria-label="Slide 3" onclick="hcGo(2)"></button>
-    </div>
-    <div class="hc-counter">
-      <span id="hcCur">01</span><span class="hc-sep"> / </span><span>03</span>
-    </div>
-  </div>
- 
-  <!-- BARRA DE PROGRESSO -->
-  <div class="hc-progress">
-    <div class="hc-progress-fill" id="hcFill"></div>
-  </div>
- 
 </section>
 
 <!-- SEÇÃO SOBRE -->
@@ -267,6 +180,7 @@
 </section>
 
 <!-- SEÇÃO COMECE AGORA -->
+<!-- SEÇÃO COMECE AGORA -->
 <section class="comece-agora" id="comece-agora">
   <div class="comece-container">
     <span class="comece-tag">COMECE AGORA</span>
@@ -319,7 +233,6 @@
   </div>
 </section>
 
-
 <!-- SEÇÃO POR QUE A FESP -->
 <section class="por-que">
   <div class="por-que-container">
@@ -363,7 +276,6 @@
   </div>
 </section>
 </main>
-
 
 <!-- RODAPÉ -->
 <footer class="rodape">
@@ -469,7 +381,6 @@ MODAL TALITA
  ============================================================================================================//-->
 <div id="modalOverlay" class="modal-overlay">
   <div class="modal">
-    
     <button id="fecharModal" class="modal-fechar">&times;</button>
 
     <h2>Comece sua simulação</h2>
@@ -486,20 +397,8 @@ MODAL TALITA
         <input type="checkbox" id="termos" required>
         <span>Ao iniciar a simulação, você concorda com os Termos de Uso e a Política de Privacidade.</span>
       </label>
-      <div class="modal-dicas">
-  <span class="modal-dicas-icone">💡</span>
-  <div>
-    <p class="modal-dicas-texto">Primeira vez por aqui?</p>
-    <a href="dicas_de_preparacao.html" target="_blank" class="modal-dicas-link">
-      Ver dicas de preparação antes de começar →
-    </a>
-    <a href="javascript:void(0)" onclick="fecharModalDicas()" class="modal-dicas-voltar">
-      ← Voltar ao início
-    </a>
-  </div>
-</div>
+
       <button type="submit" class="btn-modal">Iniciar simulação</button>
-      <a href="javascript:void(0)" onclick="fecharModalDicas()" class="btn-modal-voltar">← Voltar ao início</a>
     </form>
   </div>
 </div>

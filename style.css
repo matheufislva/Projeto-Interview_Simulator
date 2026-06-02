@@ -122,216 +122,47 @@
 .areas .secao-titulo a { color: #9ca3af; }          /* cinza claro */
 
 
-/* HERO CARROSSEL */
-.hero-carousel {
-  position: relative;
-  overflow: hidden;
-  background: var(--navy);
-  min-height: 480px;
-}
- 
-.hc-track {
-  display: flex;
-  transition: transform 0.75s cubic-bezier(0.77, 0, 0.18, 1);
-  will-change: transform;
-}
- 
-.hc-slide {
-  min-width: 100%;
-  flex-shrink: 0;
-  background-image: url("imagens/imagens_diversas/fundogradiente.svg");
-  background-size: cover;
-  background-position: center;
-}
- 
-.hc-slide-inner {
+/* SEÇÃO HERO */
+.hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
-  padding: 64px 5%;           /* ← Alterado */
-  max-width: 1400px;          /* ← Aumentado */
-  margin: 0 auto;
-  min-height: 480px;
-}
- 
-/* CONTEÚDO ESQUERDO */
-.hc-content {
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: 520px;
-}
- 
-.hc-eyebrow {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--yellow);
-  border: 1px solid rgba(245, 200, 66, 0.35);
-  padding: 5px 14px;
-  border-radius: 99px;
-  margin-bottom: 22px;
-}
- 
-.hc-title {
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-  font-weight: 800;
+  background-image: url("imagens/imagens_diversas/fundogradiente.svg");
+  background-size: cover;     /* garante que não repete */
+  background-repeat: no-repeat;
+  background-position: center;
   color: var(--white);
-  line-height: 1.2;
-  margin-bottom: 18px;
-  letter-spacing: -0.5px;
-}
- 
-.hc-title em {
-  font-style: normal;
-  color: var(--yellow);
-}
- 
-.hc-desc {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
- 
-.hc-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--yellow);
-  color: var(--navy);
-  font-weight: 800;
-  font-size: 0.92rem;
-  padding: 14px 28px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
- 
-.hc-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(245, 200, 66, 0.35);
-}
- 
-.hc-btn-arrow {
-  transition: transform 0.2s;
-}
- 
-.hc-btn:hover .hc-btn-arrow {
-  transform: translateX(4px);
-}
- 
-/* VISUAL DIREITO */
-.hc-img-wrap {
-  width: 100%;
-  border-radius: 0;
-  overflow: hidden;
-  box-shadow: none;
+  padding: 60px;
 }
 
-.hc-img-wrap img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center top;
+.hero-texto {
+  flex: 1;
+  max-width: 50%;
 }
 
-.hc-visual {
-  flex: 0 0 45%;
-  max-width: 45%;
-  position: relative;
+.hero-texto h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--white); /* destaque no título */
+  text-align: center;
+}
+
+.hero-texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.hero-imagem {
+  flex: 1;
   display: flex;
-  align-items: stretch;
-  margin-right: 20px;
-  align-self: stretch; /* estica até a altura total do slide */
+  justify-content: center;
 }
- 
-/* STAT CARDS FLUTUANTES */
-.hc-stat-card {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.97);
-  border-radius: 12px;
-  padding: 12px 18px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+
+.hero-imagem img {
+  max-width: 100%;
+  border-radius: 8px;
 }
- 
-.hc-stat-1 { bottom: -10px; left: -20px; }
-.hc-stat-2 { top: -10px;    right: -20px; }
- 
-.hc-stat-num {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--navy);
-  line-height: 1;
-}
- 
-.hc-stat-lbl {
-  font-size: 0.7rem;
-  color: var(--muted);
-  font-weight: 500;
-  white-space: nowrap;
-}
- 
-/* CONTROLES (dots + contador) */
-.hc-controls {
-  position: absolute;
-  bottom: 24px;
-  left: 72px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  z-index: 10;
-}
- 
-.hc-dots { display: flex; gap: 8px; }
- 
-.hc-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.3s, width 0.3s, border-radius 0.3s;
-}
- 
-.hc-dot.active {
-  width: 28px;
-  border-radius: 4px;
-  background: var(--yellow);
-}
- 
-.hc-counter {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.45);
-  letter-spacing: 1px;
-}
- 
-/* BARRA DE PROGRESSO */
-.hc-progress {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.1);
-}
- 
-.hc-progress-fill {
-  height: 100%;
-  background: var(--yellow);
-  width: 0%;
-  transition: width 0.06s linear;
-}
- 
 
 
 /*SEÇÃO SOBRE*/
@@ -1183,36 +1014,6 @@
   transform: translateY(0);
 }
 
-/* ===== BOTÃO VOLTAR MODAL ===== */
-.btn-modal-voltar {
-  display: block;
-  width: 100%;
-  margin-top: 12px;
-  padding: 12px 18px;
-  border: 2px solid #e8edf5;
-  border-radius: 8px;
-  background: transparent;
-  color: #64748b;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  text-align: center;
-  font-family: inherit;
-}
-
-.btn-modal-voltar:hover {
-  border-color: #64748b;
-  color: #0f1e3d;
-  background: #f7f9fc;
-  transform: translateY(-1px);
-}
-
-.btn-modal-voltar:active {
-  transform: translateY(0);
-}
-
 @media (max-width: 520px) {
   .modal {
     max-width: 100%;
@@ -1334,51 +1135,7 @@ margin-top: 40px;
 }
 
 
-.modal-dicas {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: #f0f4ff;
-  border: 1px solid #c7d4f0;
-  border-radius: 10px;
-  padding: 14px 16px;
-  margin-top: 18px;
-}
 
-.modal-dicas-icone { font-size: 1.3rem; flex-shrink: 0; }
-
-.modal-dicas-texto {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin: 0 0 4px;
-}
-
-.modal-dicas-link {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--blue);
-  text-decoration: none;
-}
-
-.modal-dicas-link:hover { text-decoration: underline; }
-
-/* ===== BOTÃO VOLTAR NAS DICAS ===== */
-.modal-dicas-voltar {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--muted);
-  text-decoration: none;
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(199, 212, 240, 0.5);
-  transition: all 0.2s ease;
-}
-
-.modal-dicas-voltar:hover {
-  color: var(--navy);
-  text-decoration: underline;
-}
 
 
 
@@ -1526,27 +1283,4 @@ margin-top: 40px;
   .rodape-barra-logo {
     display: none; /* esconde logo pequena no celular */
   }
-}
-
-/* RESPONSIVO PARTE CARROSEL*/
-@media (max-width: 960px) {
-  .hc-slide-inner {
-    flex-direction: column;
-    padding: 48px 32px 80px;
-    gap: 32px;
-    min-height: auto;
-    text-align: center;
-    align-items: center;
-  }
-  .hc-content  { max-width: 100%; }
-  .hc-visual   { max-width: 380px; width: 100%; }
-  .hc-stat-1   { bottom: -8px; left: 0; }
-  .hc-stat-2   { top: -8px;    right: 0; }
-  .hc-controls { left: 50%; transform: translateX(-50%); bottom: 18px; }
-}
- 
-@media (max-width: 600px) {
-  .hc-slide-inner { padding: 40px 20px 80px; }
-  .hc-title        { font-size: 1.55rem; }
-  .hc-stat-card    { display: none; }
 }
